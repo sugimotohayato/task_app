@@ -1,0 +1,43 @@
+.top_page{
+  height: 870px;
+  width: 1366px;
+  background-color: aqua;
+}
+
+.header{
+  height: 100px;
+  width: 100%;
+  background-color: gold;
+}
+.title{}
+.youkoso{}
+.login{}
+.logout{}
+
+
+.task_itiran{
+  height: 700px;
+  width: 100%;
+  background-color: greenyellow;
+}
+
+.kako{}
+.kako_title{}
+.kako_contents{}
+
+.honzitu{}
+.honzitu_title{}
+.honzitu_contents{}
+
+.mirai{}
+.mirai_title{}
+.mirai_contents{}
+
+.footer{
+  height: 70px;
+  width: 100%;
+  background-color: brown;
+}
+
+.task_form{}
+.kousin{}
