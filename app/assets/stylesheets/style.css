@@ -1,0 +1,91 @@
+.main{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_page{
+  height: 100vh;
+  width: 50vw;
+  background-color: aqua;
+}
+
+.header{
+  height: 50px;
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background-color: gold;
+}
+.title{
+  font-size: 30px;
+}
+
+.youkoso{}
+.login{}
+.logout{}
+
+
+.task_itiran{
+  height: calc(100% - 140px);
+  width: 100%;
+  background-color: greenyellow;
+  display: flex;
+}
+
+.kako{
+  height: calc(100% - 20px);
+  width: 30%;
+  margin: 10px;
+  background-color: violet;
+}
+
+.honzitu{
+  height: calc(100% - 20px);
+  width: 30%;
+  margin: 10px;
+  background-color: violet;
+}
+
+.mirai{
+  height: calc(100% - 20px);
+  width: 40%;
+  margin: 10px;
+  background-color: violet;
+}
+
+.kigen_title{
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+  background-color: aqua;
+}
+
+
+.task_contents{
+  margin: 10px;
+  padding-left: 10px;
+  background-color: burlywood;
+}
+
+.task_contents_bottan{
+  margin-left: 10px;
+}
+
+
+.footer{
+  height: 50px;
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background-color: gold;
+}
+
+.task_form{}
+.kousin{}
