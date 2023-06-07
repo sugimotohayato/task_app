@@ -16,7 +16,7 @@
   <%= form_tag({ controller: :tasks, action: :destroy_multiple }, method: :delete) do %>
     <% @tasks.each do |task| %>
       <% if task.date < Date.today %>
-        <div class="task_contents">
+        <div class="task_content">
           <%= check_box_tag 'task_ids[]', task.id %>
           <%= task.date.strftime("%m/%d") %>
           <%= task.title %>
@@ -29,10 +29,11 @@
 
   <div class="honzitu">
   <div class="kigen_title">本日のタスク</div>
+  <div class="task_contents">
   <%= form_tag({ controller: :tasks, action: :destroy_multiple }, method: :delete) do %>
     <% @tasks.each do |task| %>
       <% if task.date == Date.today %>
-        <div class="task_contents">
+        <div class="task_content">
           <%= check_box_tag 'task_ids[]', task.id %>
           <%= task.date.strftime("%m/%d") %>
           <%= task.title %>
@@ -41,14 +42,16 @@
     <% end %>
     <%= submit_tag "完了", class: "task_contents_bottan" %>
   <% end %>
-</div>
+  </div>
+  </div>
 
   <div class="mirai">
   <div class="kigen_title">今後のタスク</div>
+  <div class="task_contents">
   <%= form_tag({ controller: :tasks, action: :destroy_multiple }, method: :delete) do %>
     <% @tasks.each do |task| %>
       <% if task.date > Date.today %>
-        <div class="task_contents">
+        <div class="task_content">
           <%= check_box_tag 'task_ids[]', task.id %>
           <%= task.date.strftime("%m/%d") %>
           <%= task.title %>
@@ -57,6 +60,7 @@
     <% end %>
     <%= submit_tag "完了", class: "task_contents_bottan" %>
   <% end %>
+  </div>
   </div>
 
 </div>
