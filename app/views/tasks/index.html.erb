@@ -23,7 +23,7 @@
         </div>
       <% end %>
     <% end %>
-    <%= submit_tag "完了", class: "task_contents_bottan" %>
+    <%= submit_tag "完了", class: "task_contents_button" %>
   <% end %>
   </div>
 
@@ -40,7 +40,7 @@
         </div>
       <% end %>
     <% end %>
-    <%= submit_tag "完了", class: "task_contents_bottan" %>
+    <%= submit_tag "完了", class: "task_contents_button" %>
   <% end %>
   </div>
   </div>
@@ -58,7 +58,7 @@
         </div>
       <% end %>
     <% end %>
-    <%= submit_tag "完了", class: "task_contents_bottan" %>
+    <%= submit_tag "完了", class: "task_contents_button" %>
   <% end %>
   </div>
   </div>
@@ -68,13 +68,12 @@
 <div class="footer">
   <div class="task_form">
     <%= form_with model: @task, url: tasks_path, method: :post, local: true do |form| %>
-      <%= form.label :date, "日付" %>
+      <%= form.label :date, "実行日" %>
       <%= form.date_field :date, value: Date.today.to_s, required: true %>
 
-      <%= form.label :title, "タスク" %>
-      <%= form.text_field :title, placeholder: "タスク", required: true %>
+      <%= form.text_field :title, placeholder: "タスク内容", required: true %>
 
-      <%= form.submit "投稿" %>
+      <%= form.submit "投稿", class: "task_contents_button" %>
     <% end %>
   </div>
 </div>
