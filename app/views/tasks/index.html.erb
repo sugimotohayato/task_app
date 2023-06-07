@@ -1,3 +1,4 @@
+<div class="main">
 <div class="top_page">
 
 <div class="header">
@@ -7,24 +8,68 @@
   <div class="logout">ログアウト</div>
 </div>
 
+
 <div class="task_itiran">
+
   <div class="kako">
-    <div class="kako_title">期限過ぎ</div>
-    <div class="kako_contents">過去のTASK</div>
+  <div class="kigen_title">期限過ぎ</div>
+  <%= form_tag({ controller: :tasks, action: :destroy_multiple }, method: :delete) do %>
+    <% @tasks.each do |task| %>
+      <% if task.date < Date.today %>
+        <div class="task_contents">
+          <%= check_box_tag 'task_ids[]', task.id %>
+          <%= task.date.strftime("%m/%d") %>
+          <%= task.title %>
+        </div>
+      <% end %>
+    <% end %>
+    <%= submit_tag "完了", class: "task_contents_bottan" %>
+  <% end %>
   </div>
+
   <div class="honzitu">
-  <div class="honzitu_title">本日のタスク</div>
-    <div class="honzitu_contents">本日のTASK</div>
-  </div>
+  <div class="kigen_title">本日のタスク</div>
+  <%= form_tag({ controller: :tasks, action: :destroy_multiple }, method: :delete) do %>
+    <% @tasks.each do |task| %>
+      <% if task.date == Date.today %>
+        <div class="task_contents">
+          <%= check_box_tag 'task_ids[]', task.id %>
+          <%= task.date.strftime("%m/%d") %>
+          <%= task.title %>
+        </div>
+      <% end %>
+    <% end %>
+    <%= submit_tag "完了", class: "task_contents_bottan" %>
+  <% end %>
+</div>
+
   <div class="mirai">
-  <div class="mirai_title">タスク</div>
-    <div class="mirai_contents">未来のTASK</div>
+  <div class="kigen_title">今後のタスク</div>
+  <%= form_tag({ controller: :tasks, action: :destroy_multiple }, method: :delete) do %>
+    <% @tasks.each do |task| %>
+      <% if task.date > Date.today %>
+        <div class="task_contents">
+          <%= check_box_tag 'task_ids[]', task.id %>
+          <%= task.date.strftime("%m/%d") %>
+          <%= task.title %>
+        </div>
+      <% end %>
+    <% end %>
+    <%= submit_tag "完了", class: "task_contents_bottan" %>
+  <% end %>
   </div>
+
 </div>
 
 <div class="footer">
-  <div class="task_form">簡易投稿フォーム</div>
-  <div class="kousin">更新ボタン</div>
+  <div class="task_form">
+    <form action="/tasks" method="post">
+      <input type="date" name="date" value="<%= Date.today.to_s %>" required>
+      <input type="text" name="title" placeholder="タスク" required>
+      <button type="submit">投稿</button>
+    </form>
+  </div>
 </div>
 
+</div>
 </div>
