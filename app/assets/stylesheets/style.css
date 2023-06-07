@@ -19,7 +19,7 @@
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  background-color: gold;
+  background-color: rgb(216, 245, 255);
 }
 .title{
   font-size: 30px;
@@ -33,7 +33,7 @@
 .task_itiran{
   height: calc(100% - 140px);
   width: 100%;
-  background-color: greenyellow;
+  background-color: rgb(255, 255, 255);
   display: flex;
 }
 
@@ -41,21 +41,21 @@
   height: calc(100% - 20px);
   width: 30%;
   margin: 10px;
-  background-color: violet;
+  background-color: rgb(254, 175, 205);
 }
 
 .honzitu{
   height: calc(100% - 20px);
   width: 30%;
   margin: 10px;
-  background-color: violet;
+  background-color: rgb(250, 255, 173);
 }
 
 .mirai{
   height: calc(100% - 20px);
   width: 40%;
   margin: 10px;
-  background-color: violet;
+  background-color: rgb(173, 255, 209);
 }
 
 .kigen_title{
@@ -64,7 +64,7 @@
   margin: 10px;
   line-height: 40px;
   text-align: center;
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 20%);
 }
 
 
@@ -76,7 +76,12 @@
 .task_content{
   margin: 0px 10px 10px 10px;
   padding-left: 10px;
-  background-color: burlywood;
+  background-color: rgba(255, 255, 255, 50%);
+  color: #000;
+}
+
+.task_content_text{
+  color: #000;
 }
 
 .task_contents_bottan{
@@ -90,7 +95,7 @@
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  background-color: gold;
+  background-color: rgb(216, 245, 255);
 }
 
 .task_form{}
