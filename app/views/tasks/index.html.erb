@@ -3,9 +3,9 @@
 
 <div class="header">
   <div class="title">Task</div>
-  <div class="youkoso">〜さんようこそ</div>
-  <div class="login">ログイン</div>
-  <div class="logout">ログアウト</div>
+  <div class="youkoso"></div>
+  <div class="login"></div>
+  <div class="logout"></div>
 </div>
 
 
@@ -63,11 +63,15 @@
 
 <div class="footer">
   <div class="task_form">
-    <form action="/tasks" method="post">
-      <input type="date" name="date" value="<%= Date.today.to_s %>" required>
-      <input type="text" name="title" placeholder="タスク" required>
-      <button type="submit">投稿</button>
-    </form>
+    <%= form_with model: @task, url: tasks_path, method: :post, local: true do |form| %>
+      <%= form.label :date, "日付" %>
+      <%= form.date_field :date, value: Date.today.to_s, required: true %>
+
+      <%= form.label :title, "タスク" %>
+      <%= form.text_field :title, placeholder: "タスク", required: true %>
+
+      <%= form.submit "投稿" %>
+    <% end %>
   </div>
 </div>
 
