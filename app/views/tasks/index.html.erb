@@ -2,7 +2,7 @@
 <div class="top_page">
 
 <div class="header">
-  <div class="title">Task</div>
+  <div class="title">T　a　s　K</div>
   <div class="youkoso"></div>
   <div class="login"></div>
   <div class="logout"></div>
@@ -13,18 +13,21 @@
 
   <div class="kako">
   <div class="kigen_title">期限過ぎ</div>
+  <div class="task_contents">
   <%= form_tag({ controller: :tasks, action: :destroy_multiple }, method: :delete) do %>
     <% @tasks.each do |task| %>
       <% if task.date < Date.today %>
         <div class="task_content">
           <%= check_box_tag 'task_ids[]', task.id %>
           <%= task.date.strftime("%m/%d") %>
+          <br />
           <%= task.title %>
         </div>
       <% end %>
     <% end %>
     <%= submit_tag "完了", class: "task_contents_button" %>
   <% end %>
+  </div>
   </div>
 
   <div class="honzitu">
@@ -36,6 +39,7 @@
         <div class="task_content">
           <%= check_box_tag 'task_ids[]', task.id %>
           <%= task.date.strftime("%m/%d") %>
+          <br />
           <%= task.title %>
         </div>
       <% end %>
@@ -54,6 +58,7 @@
         <div class="task_content">
           <%= check_box_tag 'task_ids[]', task.id %>
           <%= task.date.strftime("%m/%d") %>
+          <br />
           <%= task.title %>
         </div>
       <% end %>
@@ -68,10 +73,9 @@
 <div class="footer">
   <div class="task_form">
     <%= form_with model: @task, url: tasks_path, method: :post, local: true do |form| %>
-      <%= form.label :date, "実行日" %>
-      <%= form.date_field :date, value: Date.today.to_s, required: true %>
-
-      <%= form.text_field :title, placeholder: "タスク内容", required: true %>
+    タスク追加：
+      <%= form.date_field :date, value: Date.today.to_s, required: true, class: "task_contents_button" %>
+      <%= form.text_field :title, placeholder: "タスク内容", required: true, class: "task_contents_button" %>
 
       <%= form.submit "投稿", class: "task_contents_button" %>
     <% end %>
