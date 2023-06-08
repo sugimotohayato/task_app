@@ -73,10 +73,8 @@
 <div class="footer">
   <div class="task_form">
     <%= form_with model: @task, url: tasks_path, method: :post, local: true do |form| %>
-    タスク追加：
       <%= form.date_field :date, value: Date.today.to_s, required: true, class: "task_contents_button" %>
       <%= form.text_field :title, placeholder: "タスク内容", required: true, class: "task_contents_button" %>
-
       <%= form.submit "投稿", class: "task_contents_button" %>
     <% end %>
   </div>

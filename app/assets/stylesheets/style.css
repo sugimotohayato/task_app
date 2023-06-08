@@ -27,11 +27,6 @@
   font-size: 30px;
 }
 
-.youkoso{}
-.login{}
-.logout{}
-
-
 .task_itiran{
   height: calc(100% - 180px);
   width: 100%;
@@ -51,7 +46,7 @@
   height: calc(100% - 0px);
   width: 30%;
   margin: 0px 20px;
-  background-color: rgb(250, 255, 173);
+  background-color: rgb(255, 232, 173);
   border-radius: 20px;
 }
 
@@ -85,6 +80,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   color: #000;
   border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .task_content_text{
@@ -95,8 +91,10 @@
   color: #000000;
   margin: 0 0 10px 10px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 70%);
   padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 
@@ -115,5 +113,84 @@
   line-height: 70px;
 }
 
+ /* タブレット表示時 */
+@media (max-width: 1024px) {
 
-.kousin{}
+  .main{
+    font-size: 15px;
+  }
+
+  .kigen_title{
+    height: 20px;
+    font-size: 15px;
+    margin: 5px;
+    line-height: 20px;
+  }
+  
+  
+  .task_contents{
+    height: calc(100% - 30px);
+  }
+
+}
+
+ /* スマホ表示時 */
+@media (max-width: 500px) {
+
+  .main{
+    font-size: 10px;
+  }
+  
+  .kako{
+    margin: 0px 0px 0px 10px;
+  }
+  
+  .honzitu{
+    margin: 0px 10px;
+  }
+  
+  .mirai{
+    margin: 0px 10px 0px 0px;
+  }
+  
+  .task_content{
+    margin: 0px 10px 10px 10px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+  
+  .task_content_text{
+    color: #000;
+  }
+  
+  .task_contents_button{
+    color: #000000;
+    margin: 0 0 10px 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 70%);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    width: 78px;
+  }
+  
+  
+  .footer{
+    height: 50px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(216, 245, 255);
+    border-radius: 20px;
+    margin: 10px;
+  }
+  
+  .task_form{
+    line-height: 70px;
+  }
+
+}
