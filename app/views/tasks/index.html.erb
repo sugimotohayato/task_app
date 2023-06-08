@@ -18,16 +18,15 @@
     <% @tasks.each do |task| %>
       <% if task.date < Date.today %>
         <div class="task_content">
-          <%= check_box_tag 'task_ids[]', task.id %>
+          <%= check_box_tag 'task_ids[]', task.id, false, class: 'task_checkbox' %>
           <%= task.date.strftime("%m/%d") %>
-          <br />
           <%= task.title %>
         </div>
       <% end %>
     <% end %>
     <%= submit_tag "完了", class: "task_contents_button" %>
   <% end %>
-  </div>
+</div>
   </div>
 
   <div class="honzitu">
@@ -37,16 +36,15 @@
     <% @tasks.each do |task| %>
       <% if task.date == Date.today %>
         <div class="task_content">
-          <%= check_box_tag 'task_ids[]', task.id %>
+          <%= check_box_tag 'task_ids[]', task.id, false, class: 'task_checkbox' %>
           <%= task.date.strftime("%m/%d") %>
-          <br />
           <%= task.title %>
         </div>
       <% end %>
     <% end %>
     <%= submit_tag "完了", class: "task_contents_button" %>
   <% end %>
-  </div>
+</div>
   </div>
 
   <div class="mirai">
@@ -56,16 +54,15 @@
     <% @tasks.each do |task| %>
       <% if task.date > Date.today %>
         <div class="task_content">
-          <%= check_box_tag 'task_ids[]', task.id %>
+          <%= check_box_tag 'task_ids[]', task.id, false, class: 'task_checkbox' %>
           <%= task.date.strftime("%m/%d") %>
-          <br />
           <%= task.title %>
         </div>
       <% end %>
     <% end %>
     <%= submit_tag "完了", class: "task_contents_button" %>
   <% end %>
-  </div>
+</div>
   </div>
 
 </div>

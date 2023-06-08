@@ -1,10 +1,12 @@
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var taskContents = document.querySelectorAll('.task_content');
-    taskContents.forEach(function(content) {
-      content.addEventListener('click', function() {
-        var checkbox = this.querySelector('input[type="checkbox"]');
+document.addEventListener('DOMContentLoaded', function() {
+  var taskContents = document.querySelectorAll('.task_content');
+  taskContents.forEach(function(content) {
+    var checkbox = content.querySelector('input[type="checkbox"]');
+    content.addEventListener('click', function(event) {
+      if (event.target !== checkbox) {
         checkbox.checked = !checkbox.checked;
-      });
+      }
     });
   });
+});
