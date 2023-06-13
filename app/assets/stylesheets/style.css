@@ -120,6 +120,18 @@
     font-size: 12px;
   }
 
+  .kako{
+    margin: 0px 0px 0px 15px;
+  }
+  
+  .honzitu{
+    margin: 0px 15px;
+  }
+  
+  .mirai{
+    margin: 0px 15px 0px 0px;
+  }
+
   .kigen_title{
     height: 20px;
     font-size: 15px;
